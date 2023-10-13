@@ -5,13 +5,14 @@ import { StyledCard } from "./styled"
 
 interface ICardProps extends ReactTypes {
   data: Result
+  id: number
 }
 
-const Card = ({data}: ICardProps) => {
+const Card = ({data, id}: ICardProps) => {
   const {name } = data;
   return (
     <StyledCard >
-      {name}
+      {id} - {name}
     </StyledCard>
   )
 }

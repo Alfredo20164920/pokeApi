@@ -37,11 +37,11 @@ export const ContainerImage = styled.div`
     border-radius: 1.5em;
 `
 
-export const RightSide = styled.section`
-    display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
-    gap: 1.2em;
-    padding: 2em;
+export const RightSide = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding: 2em 1em;
     width: 100%;
     height: 100%;
 `
