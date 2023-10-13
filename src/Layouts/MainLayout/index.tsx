@@ -1,8 +1,8 @@
+import { Container, ContainerImage, LeftSide, Logo, RightSide, Title } from './styled'
 import { logo, pokeball } from '../../assets'
-import { Container, ContainerImage, LeftSide, Logo, Title } from './styled'
+import { ReactTypes } from '../../types/utils'
 
-interface IMainLayoutProps {
-    children: JSX.Element
+interface IMainLayoutProps extends ReactTypes {
 }
 
 const MainLayout = ({children}: IMainLayoutProps) => {
@@ -16,9 +16,9 @@ const MainLayout = ({children}: IMainLayoutProps) => {
               <img src={pokeball} width={'350'}/>
             </ContainerImage>
         </LeftSide>
-        <section>
+        <RightSide>
             {children}
-        </section>
+        </RightSide>
     </Container>
   )
 }
