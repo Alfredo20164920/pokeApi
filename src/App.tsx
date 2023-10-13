@@ -1,8 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import { Home, Pokemon } from "./pages";
+
 function App() {
 
   return (
     <>
-      <h1>Hola mundo</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:pokemon" element={<Pokemon />} />
+      </Routes>
     </>
   )
 }
