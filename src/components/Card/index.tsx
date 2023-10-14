@@ -10,24 +10,24 @@ import { useApi } from '../../hooks/useApi';
 import { pokeball } from '../../assets';
 
 interface ICardProps extends ReactTypes {
-  params: Result
+  cardData: Result
 }
 
-const Card = ({ params }: ICardProps) => {
-  const dispatch = useDispatch(); 
+const Card = ({ cardData }: ICardProps) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { name, url } = params;
+  const { name, url } = cardData;
 
-  const {data, isLoading, error} = useApi<PokemonResult>(url, 'get');
+  const { data, isLoading, error } = useApi<PokemonResult>(url, 'get');
 
   const handleClick = (e: MouseEvent) => {
     switch (e.detail) {
       case 1: {
-        dispatch(addImage({imageUrl: data?.sprites.front_default ?? pokeball}))
+        dispatch(addImage({ imageUrl: data?.sprites.front_default ?? pokeball }))
         break;
       }
       case 2: {
-        navigate(`/${name}`, {state: {url}});
+        navigate(`/${name}`, { state: { url } });
         break;
       }
       default: {
@@ -36,10 +36,10 @@ const Card = ({ params }: ICardProps) => {
     }
   }
 
-  if(error) {
+  if (error) {
     return <p>Error 404</p>
   }
-  if(isLoading) return <p>Loading</p>
+  if (isLoading) return <p>Loading</p>
 
   return (
     <StyledCard onClick={handleClick}>

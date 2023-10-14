@@ -1,5 +1,4 @@
 import Card from './Card';
-import ButtonPagination from './ButtonPagination';
 import Grid from './Grid';
 import MainInformation from './PokemonInformation/MainInformation';
 import StatsInformation from './PokemonInformation/StatsInformation';
@@ -8,10 +7,11 @@ import Stats from './Stats';
 import Information from './Information';
 import Progressbar from './Progressabar';
 import ButtonHome from './ButtonHome';
+import Pagination from './Pagination';
+
 export {
     Card,
     Grid,
-    ButtonPagination,
     MainInformation,
     StatsInformation,
     Tag,
@@ -19,5 +19,6 @@ export {
     Information,
     Progressbar,
     ButtonHome,
+    Pagination,
     
 }

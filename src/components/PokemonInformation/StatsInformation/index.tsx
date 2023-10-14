@@ -10,7 +10,6 @@ interface IStatsInformationProps {
 const StatsInformation = ({ abilities, stats }: IStatsInformationProps) => {
     return (
         <Container>
-            
             <InfoContainer>
                 <Title>Abilities</Title>
                 <ItemContainer>
