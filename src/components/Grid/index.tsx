@@ -5,15 +5,16 @@ import { Container } from "./styled"
 interface IGridProps {
     data: Result[] | undefined
     offset: number,
+    pokemonsLimit: number
 }
 
-const Grid = ({ data, offset }: IGridProps) => {
+const Grid = ({ data, offset, pokemonsLimit }: IGridProps) => {
     return (
         <Container>
             {
                 data?.map((item, index) => {
                     return (
-                        (index + 1) + offset <= 153 ? <Card key={index + 1} params={item} /> : null
+                        index + offset < pokemonsLimit ? <Card key={index + 1} cardData={item} /> : null
                     )
                 })
             }
