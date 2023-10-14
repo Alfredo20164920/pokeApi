@@ -1,38 +1,40 @@
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from 'react';
 import axios from "axios";
-import { PokemonResult } from "../../types/data";
-import { Container} from "./styled";
-import { MainInformation, StatsInformation } from "../../components";
+import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+
+import { CardsContainer, Container} from "./styled";
 import { pokeball } from "../../assets";
+import { PokemonResult } from "../../types/data";
+import { ButtonHome, MainInformation, StatsInformation } from "../../components";
 
 const Pokemon = () => {
   const [pokeInfo, setPokeInfo] = useState<PokemonResult>()
-  const location = useLocation();
-
-  const { url } = location.state;
-
+  const {pokemon} = useParams();
+  
   useEffect(() => {
-    axios.get(url)
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
       .then(res => {
         setPokeInfo(res.data)
       })
-  }, [url])
+  }, [pokemon]);
 
-  
+  if(!pokeInfo) return <p>Error</p>
   return (
     <Container>
-      <MainInformation 
-        weightPokemon={pokeInfo?.weight ?? 0} 
-        heighPokemon={pokeInfo?.height ?? 0} 
-        experience={pokeInfo?.base_experience ?? 0} 
-        image={pokeInfo?.sprites.front_default ?? pokeball} 
-        types={pokeInfo?.types ?? []}
-      />
-      <StatsInformation 
-        abilities={pokeInfo?.abilities}
-        stats={pokeInfo?.stats}
-      />
+      <CardsContainer>
+        <MainInformation 
+          weightPokemon={pokeInfo?.weight ?? 0} 
+          heighPokemon={pokeInfo?.height ?? 0} 
+          experience={pokeInfo?.base_experience ?? 0} 
+          image={pokeInfo?.sprites.front_default ?? pokeball} 
+          types={pokeInfo?.types ?? []}
+        />
+        <StatsInformation 
+          abilities={pokeInfo?.abilities}
+          stats={pokeInfo?.stats}
+        />
+      </CardsContainer>
+      <ButtonHome>HOME</ButtonHome>
     </Container>
   )
 }
