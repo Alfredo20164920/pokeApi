@@ -27,34 +27,8 @@ export const InfoContainer = styled.section`
 `
 
 export const ItemContainer = styled.div`
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5em;
-`
-
-export const AbilityItem = styled.p`
-    display: inline-block;
-    flex-grow: 1;
-    flex-basis: 20;
-    color: black;
-    background-color: #d5c7bc;
-    padding: 0.5em 0.2em;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.3rem;
-    text-transform: capitalize;
-    border-radius: 5px;
-`
-
-export const ProgressContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-
-`
-
-export const TitleStats = styled.p`
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: capitalize;
+    gap: 1em;
 `

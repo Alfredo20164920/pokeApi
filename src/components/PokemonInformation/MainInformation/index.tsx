@@ -1,44 +1,34 @@
+import { Information, Tag } from '../..'
 import { Type } from '../../../types/data'
-import { Container, DatInformation, ImageStyled, SingleInformation, SubtitleInformation, TitleInformation, Types, TypesContainer } from './styled'
+import { Container, DataInformation, ImageStyled,  TypesContainer } from './styled'
 
 interface IMainInformationProps {
-    image: string | undefined
-    types: Type[] | undefined
-    heighPokemon: number | undefined
-    experience: number | undefined
-    weightPokemon: number | undefined
+    image: string 
+    types: Type[] 
+    heighPokemon: number 
+    experience: number 
+    weightPokemon: number 
 }
 
 const MainInformation = ({image, types, heighPokemon, weightPokemon, experience}: IMainInformationProps) => {
 
   return (
     <Container>
-
         <ImageStyled src={image} />
+        
         <TypesContainer>
           {
             types?.map((item, index) => (
-              <Types key={index}>
-                {item.type.name}
-              </Types>
+              <Tag text={item.type.name} key={index}/>
             ))
           }
         </TypesContainer>
         
-        <DatInformation>
-          <SingleInformation>
-            <TitleInformation>Height</TitleInformation>
-            <SubtitleInformation>{heighPokemon}</SubtitleInformation>
-          </SingleInformation>
-          <SingleInformation>
-            <TitleInformation>Weight</TitleInformation>
-            <SubtitleInformation>{weightPokemon}</SubtitleInformation>
-          </SingleInformation>
-          <SingleInformation>
-            <TitleInformation>Experience</TitleInformation>
-            <SubtitleInformation>{experience}</SubtitleInformation>
-          </SingleInformation>
-        </DatInformation>
+        <DataInformation>
+          <Information title='Height' data={heighPokemon ?? 0} />
+          <Information title='Weight' data={weightPokemon ?? 0} />
+          <Information title='Experience' data={experience ?? 0} />
+        </DataInformation>
         
     </Container>
   )
