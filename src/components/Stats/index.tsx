@@ -17,8 +17,6 @@ const Stats = ({ title, data }: IStatProp) => {
                 ))
             }
         </Container>
-
-
     )
 }
 

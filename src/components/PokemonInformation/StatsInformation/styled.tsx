@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
     flex-grow: 1;
+    min-width: 350px;
     height: 500px;
     background-color: #dee2e6;
     border-radius: 15px;
