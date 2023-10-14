@@ -7,7 +7,7 @@ import Tag from './Tag';
 import Stats from './Stats';
 import Information from './Information';
 import Progressbar from './Progressabar';
-
+import ButtonHome from './ButtonHome';
 export {
     Card,
     Grid,
@@ -18,5 +18,6 @@ export {
     Stats,
     Information,
     Progressbar,
+    ButtonHome,
     
 }
