@@ -1,11 +1,16 @@
+import {useSelector} from 'react-redux'
+
 import { Container, ContainerImage, LeftSide, Logo, RightSide, Title } from './styled'
-import { logo, pokeball } from '../../assets'
+import { logo } from '../../assets'
 import { ReactTypes } from '../../types/utils'
+import { IRootState } from '../../types/redux'
 
 interface IMainLayoutProps extends ReactTypes {
 }
 
 const MainLayout = ({children}: IMainLayoutProps) => {
+  const {imageUrl}  = useSelector((state: IRootState) => state.pokemonImage);
+
   return (
     <Container>
         <LeftSide>
@@ -13,7 +18,7 @@ const MainLayout = ({children}: IMainLayoutProps) => {
 
             <Logo src={logo} width={'100'}/>
             <ContainerImage>
-              <img src={pokeball} width={'350'}/>
+              <img src={imageUrl} width={'350'}/>
             </ContainerImage>
         </LeftSide>
         <RightSide>
