@@ -22,10 +22,10 @@ const Home = () => {
     setOffset(offset - limit);
   }
 
+  if(isLoading) return <p>Loading</p>
   if(error) {
     return <p>Error 404</p>
   }
-  if(isLoading) return <p>Loading</p>
 
   return (
     <MainLayout>

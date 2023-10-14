@@ -11,10 +11,9 @@ import { pokeball } from '../../assets';
 
 interface ICardProps extends ReactTypes {
   params: Result
-  id: number
 }
 
-const Card = ({ params, id }: ICardProps) => {
+const Card = ({ params }: ICardProps) => {
   const dispatch = useDispatch(); 
   const navigate = useNavigate();
   const { name, url } = params;
@@ -44,7 +43,7 @@ const Card = ({ params, id }: ICardProps) => {
 
   return (
     <StyledCard onClick={handleClick}>
-      {id} - {name}
+      {name}
     </StyledCard>
   )
 }

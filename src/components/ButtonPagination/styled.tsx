@@ -10,5 +10,5 @@ export const ButtonStyled = styled.button<IButtonProps>`
     cursor: pointer;
     height: fit-content;
     align-self: center;
-    color: ${props => props.$isdisabled ? '#6c757d' : '#fff'};
+    color: ${props => props.$isdisabled ? '#adb5bd' : '#14213d'};
 `

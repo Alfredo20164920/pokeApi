@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-    width: 100%;
+    min-width: 100vw;
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    background-color: #fff;
+
+    @media (max-width: 950px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const LeftSide = styled.section`
@@ -19,7 +24,9 @@ export const LeftSide = styled.section`
 `
 
 export const Title = styled.h2`
-    font-size: 3.2rem;
+    font-size: 3rem;
+    color: #000;
+    font-weight: 500;
 `
 
 export const Logo = styled.img`
@@ -31,7 +38,7 @@ export const ContainerImage = styled.div`
     width: 100%;
     display: grid;
     place-items: center;
-    background-color: white;
+    background-color: #e5e5e5;
     flex: 1;
     margin-top: 1.5em;
     border-radius: 1.5em;

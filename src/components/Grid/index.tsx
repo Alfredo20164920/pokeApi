@@ -13,7 +13,7 @@ const Grid = ({ data, offset }: IGridProps) => {
             {
                 data?.map((item, index) => {
                     return (
-                        (index + 1) + offset <= 153 ? <Card key={index + 1} params={item} id={(index + 1) + offset} /> : null
+                        (index + 1) + offset <= 153 ? <Card key={index + 1} params={item} /> : null
                     )
                 })
             }
