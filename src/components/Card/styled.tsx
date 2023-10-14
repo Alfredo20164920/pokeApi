@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.button`
-    padding: 5px 10px;
-    background-color: azure;
-    border-radius: 10px;
-    color: black;
-    text-transform: capitalize;
     border: none;
+    padding: 1em;
+    border-radius: 10px;
     font-size: 1.2rem;
-    letter-spacing: 0.15rem;
-    font-weight: bold;
+    font-weight: 700;
+    text-transform: capitalize;
     cursor: pointer;
+    color: #fff;
+    background-color: #219ebc;
 `

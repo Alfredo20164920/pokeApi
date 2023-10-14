@@ -8,11 +8,16 @@ export const Container = styled.main`
     justify-content: center;
     align-items: center;
     gap: 1.2em;
+    background-color: #fff;
+    padding: 2em;
 `
 
 export const CardsContainer = styled.div`
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1.2em;
+
+    
 `
