@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-    width: 450px;
-    height: 600px;
-    background-color: #ced4da;
+    flex-grow: 1;
+    height: 500px;
+    background-color: #dee2e6;
     border-radius: 15px;
 
     display: flex;
@@ -15,9 +15,9 @@ export const Container = styled.section`
 
 export const Title = styled.h2`
     font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 0.4rem;
-    margin-bottom: 1em;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5em;
 `
 
 export const InfoContainer = styled.section`

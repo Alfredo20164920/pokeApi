@@ -13,11 +13,11 @@ export const Container = styled.div`
 
 export const Title = styled.p`
     font-size: 1.2rem;
-    font-weight: thin;
+    font-weight: 200;
     color: #343a40;
 `
 
 export const Subtitle = styled.p`
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: 700;
 `

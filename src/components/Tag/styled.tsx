@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const StyledTag = styled.span`
     display: inline-block;
     flex-grow: 1;
-    color: black;
-    background-color: #d5c7bc;
-    padding: 0.5em 0.2em;
+    color: white;
+    background-color: #14213d;
+    padding: 0.5em 2em;
     text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
     text-transform: capitalize;
     border-radius: 5px;
 `

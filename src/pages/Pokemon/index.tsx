@@ -30,7 +30,7 @@ const Pokemon = () => {
           stats={data?.stats}
         />
       </CardsContainer>
-      <ButtonHome>HOME</ButtonHome>
+      <ButtonHome>Home</ButtonHome>
     </Container>
   )
 }

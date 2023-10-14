@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-    width: 450px;
-    height: 600px;
-    background-color: white;
+    flex-grow: 1;
+    height: 500px;
+    background-color: #dee2e6;
     border-radius: 15px;
 
     display: flex;
