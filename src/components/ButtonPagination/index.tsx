@@ -8,7 +8,7 @@ interface IButtonPagination extends ReactTypes {
 
 const ButtonPagination = ({action, isDisabled, children}: IButtonPagination) => {
   return (
-    <ButtonStyled type="button" onClick={action} disabled={isDisabled} isDisabled={isDisabled} >
+    <ButtonStyled type="button" onClick={action} disabled={isDisabled} $isdisabled={isDisabled} >
       {children}
     </ButtonStyled>
   )
