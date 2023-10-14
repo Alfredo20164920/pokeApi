@@ -1,12 +1,12 @@
-import { MouseEvent, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { MouseEvent, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { Pokemon, Result } from "../../types/data";
+import { PokemonResult, Result } from "../../types/data";
 import { ReactTypes } from "../../types/utils";
 import { StyledCard } from "./styled"
 import { addImage } from '../../context/ImgCtx';
 import axios from 'axios';
-import { IRootState } from '../../types/redux';
+import { useNavigate } from 'react-router-dom';
 
 interface ICardProps extends ReactTypes {
   data: Result
@@ -15,28 +15,30 @@ interface ICardProps extends ReactTypes {
 
 const Card = ({ data, id }: ICardProps) => {
 
+  const [imageData, setImageData] = useState<string>('');
+
   const dispatch = useDispatch();
-  const {imageUrl}  = useSelector((state: IRootState) => state.pokemonImage);
+  const navigate = useNavigate();
 
   const { name, url } = data;
 
   useEffect(() => {
-    axios.get(imageUrl)
+    axios.get(url)
       .then(res => {
-        const {sprites} = res.data as Pokemon;
-        dispatch(addImage({imageUrl: sprites.front_default}));
+        const {sprites} = res.data as PokemonResult;
+        setImageData(sprites.front_default);
       });
-  }, [imageUrl, dispatch])
+  }, [url])
 
 
   const handleClick = (e: MouseEvent) => {
     switch (e.detail) {
       case 1: {
-        dispatch(addImage({imageUrl: url }))
+        dispatch(addImage({imageUrl: imageData}))
         break;
       }
       case 2: {
-        console.log(2);
+        navigate(`/${name}`, {state: {url}});
         break;
       }
       default: {
