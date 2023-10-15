@@ -16,11 +16,11 @@ const Pagination = ({ children, limit, offset, setOffset }: IPaginationProps) =>
 
     return (
         <>
-            <ButtonStyled type="button" onClick={() => setOffset(offset - limit)} disabled={lowerLimit} $isdisabled={lowerLimit} >
+            <ButtonStyled type="button" onClick={() => setOffset(offset - limit)} disabled={lowerLimit} $isdisabled={lowerLimit} data-testid="home--button_prev" >
                 <FontAwesomeIcon icon={faCircleChevronLeft} fontSize={40} />
             </ButtonStyled>
                 {children}
-            <ButtonStyled type="button" onClick={() => setOffset(offset + limit)} disabled={higherLimit} $isdisabled={higherLimit} >
+            <ButtonStyled type="button" onClick={() => setOffset(offset + limit)} disabled={higherLimit} $isdisabled={higherLimit} data-testid="home--button_next" >
                 <FontAwesomeIcon icon={faCircleChevronRight} fontSize={40} />
             </ButtonStyled>
         </>

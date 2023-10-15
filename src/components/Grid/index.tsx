@@ -1,4 +1,4 @@
-import { Card } from "../"
+import { Card } from ".."
 import { Result } from "../../types/data"
 import { Container } from "./styled"
 
@@ -10,11 +10,11 @@ interface IGridProps {
 
 const Grid = ({ data, offset, pokemonsLimit }: IGridProps) => {
     return (
-        <Container>
+        <Container data-testid="home--grid">
             {
                 data?.map((item, index) => {
                     return (
-                        index + offset < pokemonsLimit ? <Card key={index + 1} cardData={item} /> : null
+                        index + offset < pokemonsLimit && <Card key={index + 1} cardData={item} /> 
                     )
                 })
             }

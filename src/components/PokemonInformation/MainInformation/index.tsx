@@ -11,10 +11,10 @@ interface IMainInformationProps {
 }
 
 const MainInformation = ({image, types, heighPokemon, weightPokemon, experience}: IMainInformationProps) => {
-
+  console.log({image, heighPokemon, weightPokemon, experience})
   return (
-    <Container>
-        <ImageStyled src={image} />
+    <Container data-testid="info--main">
+        <ImageStyled data-testid="info--main_image" src={image} />
         
         <TypesContainer>
           {
