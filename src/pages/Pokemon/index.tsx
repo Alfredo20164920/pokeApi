@@ -3,17 +3,15 @@ import { useParams } from "react-router-dom";
 import { CardsContainer, Container } from "./styled";
 import { pokeball } from "../../assets";
 import { PokemonResult } from "../../types/data";
-import { ButtonHome, MainInformation, StatsInformation } from "../../components";
+import { ButtonHome, Loading, MainInformation, NotFound, StatsInformation } from "../../components";
 import { useApi } from "../../hooks/useApi";
 
 const Pokemon = () => {
   const { pokemon } = useParams();
   const { data, isLoading, error } = useApi<PokemonResult>(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, 'get');
-
-  if (error) {
-    return <p>Error 404</p>
-  }
-  if (isLoading) return <p>Loading</p>
+  
+  if (isLoading) return <Loading />
+  if (error) return <NotFound />
 
   return (
     <Container>

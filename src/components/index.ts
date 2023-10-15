@@ -8,6 +8,8 @@ import Information from './Information';
 import Progressbar from './Progressabar';
 import ButtonHome from './ButtonHome';
 import Pagination from './Pagination';
+import NotFound from './NotFound';
+import Loading from './Loading';
 
 export {
     Card,
@@ -20,5 +22,7 @@ export {
     Progressbar,
     ButtonHome,
     Pagination,
+    NotFound,
+    Loading,
     
 }

@@ -18,7 +18,7 @@ const Card = ({ cardData }: ICardProps) => {
   const navigate = useNavigate();
   const { name, url } = cardData;
 
-  const { data, isLoading, error } = useApi<PokemonResult>(url, 'get');
+  const { data } = useApi<PokemonResult>(url, 'get');
 
   const handleClick = (e: MouseEvent) => {
     switch (e.detail) {
@@ -35,11 +35,6 @@ const Card = ({ cardData }: ICardProps) => {
       }
     }
   }
-
-  if (error) {
-    return <p>Error 404</p>
-  }
-  if (isLoading) return <p>Loading</p>
 
   return (
     <StyledCard onClick={handleClick} data-testid="home--card" >
