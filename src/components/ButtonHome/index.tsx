@@ -19,7 +19,7 @@ const ButtonHome = ({children}: IButtonHomeProps) => {
       }
 
     return (
-        <StyledButton onClick={handleHome}>{ children }</StyledButton>
+        <StyledButton onClick={handleHome} data-testid="info--buttonHome" >{ children }</StyledButton>
     )
 }
 

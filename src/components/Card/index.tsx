@@ -42,7 +42,7 @@ const Card = ({ cardData }: ICardProps) => {
   if (isLoading) return <p>Loading</p>
 
   return (
-    <StyledCard onClick={handleClick}>
+    <StyledCard onClick={handleClick} data-testid="home--card" >
       {name}
     </StyledCard>
   )

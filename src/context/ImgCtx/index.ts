@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { pokeball } from '../../assets'
 import { IPokemonImage } from '../../types/redux';
 
-const initialState: IPokemonImage = {
+export const initialState: IPokemonImage = {
     imageUrl: pokeball,
 };
 

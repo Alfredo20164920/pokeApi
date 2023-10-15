@@ -9,7 +9,7 @@ interface IStatProp {
 
 const Stats = ({ title, data }: IStatProp) => {
     return (
-        <Container>
+        <Container data-testid="info--stats">
             <Title>{title}</Title>
             {
                 data?.map((item, index) => (

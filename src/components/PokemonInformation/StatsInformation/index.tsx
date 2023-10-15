@@ -8,6 +8,10 @@ interface IStatsInformationProps {
 }
 
 const StatsInformation = ({ abilities, stats }: IStatsInformationProps) => {
+    console.log({
+        abilities,
+        stats
+    })
     return (
         <Container>
             <InfoContainer>
