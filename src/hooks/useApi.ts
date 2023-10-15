@@ -8,28 +8,19 @@ export const useApi = <T>(url: string, method: string) => {
 
     
     useEffect(() => {
+        setIsLoading(true);
 
-        axios({url, method})
-            .then((res: AxiosResponse<T>) => setData(res.data))
-            .catch((err) => setError(err.response.status))
-            .finally(() => setIsLoading(false))
+        const fetchdata = async () => {
 
-        // const fetchData = async() => {
-        //     setIsLoading(true);
-    
-        //     try{
-        //         const response: AxiosResponse<T> = await axios({url, method});
-        //         setData(response.data);
-        //     } catch(err) {
-                
-        //         if(err instanceof Error){
-        //             setError(err);
-        //         }
-        //     }
-    
-        //     setIsLoading(false);
-        // }
-        // fetchData()
+            try {
+                const response: AxiosResponse<T> = await axios({url, method});
+                setData(response.data);
+            } catch(err) {
+                if(err instanceof Error) setError(err);
+            }
+            setIsLoading(false);
+        }
+        fetchdata()
     }, [url, method]);
 
     return {data, isLoading, error};
