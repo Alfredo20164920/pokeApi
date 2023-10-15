@@ -7,7 +7,7 @@ interface ITagProps {
 const Tag = ({ text }: ITagProps) => {
     return (
         <>
-            <StyledTag>{text}</StyledTag>
+            <StyledTag data-testid="info--tag">{text}</StyledTag>
         </>
     )
 }

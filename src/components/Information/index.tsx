@@ -7,7 +7,7 @@ interface IInformationProps {
 
 const Information = ({title, data}: IInformationProps) => {
     return (
-        <Container>
+        <Container data-testid="info--information">
             <Title>{title}</Title>
             <Subtitle>{data}</Subtitle>
         </Container>
